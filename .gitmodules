@@ -1,0 +1,3 @@
+[submodule "Dusk/vendor/spdlog"]
+	path = Dusk/vendor/spdlog
+	url = https://github.com/gabime/spdlog
