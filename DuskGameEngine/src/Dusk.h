@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Dusk/Application.h"
+#include"Dusk/Log.h"
 
 //--------------------- Entry Points ---------------------
 

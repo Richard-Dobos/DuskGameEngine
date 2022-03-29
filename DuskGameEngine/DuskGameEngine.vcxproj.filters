@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Dusk">
+      <UniqueIdentifier>{3C5A847C-2891-850D-D17D-6B10BD93010F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Dusk.h" />
+    <ClInclude Include="src\Dusk\Application.h">
+      <Filter>Dusk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\Core.h">
+      <Filter>Dusk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\EntryPoint.h">
+      <Filter>Dusk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\Log.h">
+      <Filter>Dusk</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Dusk\Application.cpp">
+      <Filter>Dusk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dusk\Log.cpp">
+      <Filter>Dusk</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

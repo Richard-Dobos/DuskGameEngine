@@ -5,7 +5,7 @@ class Sandbox : public Dusk::Application
 public:
 	Sandbox()
 	{
-
+		
 	}
 
 	~Sandbox()
