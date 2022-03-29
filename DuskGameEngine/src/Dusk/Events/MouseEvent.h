@@ -30,7 +30,6 @@ namespace Dusk
 		float m_MouseX, m_MouseY;
 	};
 
-
 	class DUSK_API MouseScrolledEvent : Event
 	{
 	public:
@@ -52,7 +51,6 @@ namespace Dusk
 		float m_XOffset, m_YOffset;
 	};
 
-
 	class DUSK_API MouseButtonEvent : public Event
 	{
 	public:
@@ -66,7 +64,6 @@ namespace Dusk
 
 		int m_Button;
 	};
-
 
 	class DUSK_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
@@ -84,7 +81,6 @@ namespace Dusk
 
 		EVENT_CLASS_TYPE(MouseButtonPressed);
 	};
-
 
 	class DUSK_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{

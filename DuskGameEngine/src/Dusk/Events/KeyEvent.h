@@ -20,7 +20,6 @@ namespace Dusk
 		int m_KeyCode;
 	};
 
-
 	class DUSK_API KeyPressedEvent : public KeyEvent
 	{
 	public:
@@ -41,7 +40,6 @@ namespace Dusk
 	private:
 		int m_RepeatCount;
 	};
-
 
 	class DUSK_API KeyReleasedEvent : public KeyEvent
 	{

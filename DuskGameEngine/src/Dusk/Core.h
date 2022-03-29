@@ -9,3 +9,5 @@
 #else
 	#error Dusk only supports Windows!
 #endif
+
+#define BIT(x) (x << 1)

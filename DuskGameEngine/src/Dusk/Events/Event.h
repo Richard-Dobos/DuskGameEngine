@@ -27,7 +27,6 @@ namespace Dusk
 		EventCategoryMouseButton	= BIT(4)
 	};
 
-
 	class DUSK_API Event
 	{
 		friend class EventDispatcher;
@@ -45,7 +44,6 @@ namespace Dusk
 	protected:
 		bool m_Handeled = false;
 	};
-
 
 	class DUSK_API EventDispatcher
 	{

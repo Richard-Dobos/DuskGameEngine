@@ -27,7 +27,6 @@ namespace Dusk
 		unsigned int m_Width, m_Height;
 	};
 
-
 	class DUSK_API WindowCloseEvent : public Event
 	{
 	public:
@@ -37,7 +36,6 @@ namespace Dusk
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
 
-
 	class DUSK_API AppTickEvent : public Event
 	{
 	public:
@@ -46,7 +44,6 @@ namespace Dusk
 		EVENT_CLASS_TYPE(AppTick);
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
-
 
 	class DUSK_API AppUpdateEvent : public Event
 	{
