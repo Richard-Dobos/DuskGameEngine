@@ -2,8 +2,6 @@
 
 #include"Event.h"
 
-#include<sstream>
-
 namespace Dusk
 {
 	class DUSK_API KeyEvent : public Event

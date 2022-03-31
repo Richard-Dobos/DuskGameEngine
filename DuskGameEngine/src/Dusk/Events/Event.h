@@ -2,9 +2,6 @@
 
 #include"Dusk/Core.h"
 
-#include<string>
-#include<functional>
-
 namespace Dusk
 {
 	enum class EventType

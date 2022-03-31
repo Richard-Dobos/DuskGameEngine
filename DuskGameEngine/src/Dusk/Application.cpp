@@ -1,3 +1,4 @@
+#include"dkpch.h"
 #include "Application.h"
 
 #include"Dusk/Log.h"
@@ -7,6 +8,7 @@ namespace Dusk
 {
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 	Application::~Application()
 	{
@@ -14,10 +16,11 @@ namespace Dusk
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(720, 480);
+		WindowResizeEvent e(m_Window->GetHeight(), m_Window->GetHeight());
 
-		DK_CORE_ERROR(e);
-
-		while (true);
+		while (m_Runnig)
+		{
+			m_Window->OnUpdate();
+		}
 	}
 }

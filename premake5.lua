@@ -10,6 +10,11 @@ workspace "DuskGameEngine"
 
 outputdir = "%{cfg.buildcfg}--%{cfg.system}--%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "DuskGameEngine/vendor/GLFW/include"
+
+include "DuskGameEngine/vendor/GLFW/premake5.lua"
+
 project "DuskGameEngine"
 	location "DuskGameEngine"
 	kind "SharedLib"
@@ -17,6 +22,9 @@ project "DuskGameEngine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "dkpch.h"
+	pchsource "DuskGameEngine/src/dkpch.cpp"
 
 	files 
 	{
@@ -26,11 +34,17 @@ project "DuskGameEngine"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
-		"src"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
 	}
 	
-	
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
+	}
+
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
