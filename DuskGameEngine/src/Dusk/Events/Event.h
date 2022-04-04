@@ -1,6 +1,7 @@
 #pragma once
 
 #include"Dusk/Core.h"
+#include"dkpch.h"
 
 namespace Dusk
 {

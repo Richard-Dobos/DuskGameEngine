@@ -28,27 +28,27 @@ namespace Dusk
 		float m_MouseX, m_MouseY;
 	};
 
-	class DUSK_API MouseScrolledEvent : Event
+	class DUSK_API MouseScrolledEvent : public Event
 	{
 	public:
-		MouseScrolledEvent(float xOffset, float yOffset)
-			:m_XOffset(xOffset), m_YOffset(yOffset) {}
-
+		MouseScrolledEvent(float OffsetX, float OffsetY)
+			:m_OffsetX(OffsetX), m_OffsetY(OffsetY) {}
 
 		std::string ToString() const override
 		{
 			std::stringstream ss;
 
-			ss << "MouseScrolledEvent: [ " << m_XOffset << ", " << m_YOffset << " ]";
+			ss << "MouseScrolledEvent: [ " << m_OffsetX << ", " << m_OffsetY << " ]";
 			return ss.str();
 		}
 
 		EVENT_CLASS_TYPE(MouseScrolled);
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput);
-	private:
-		float m_XOffset, m_YOffset;
-	};
 
+	private:
+		float m_OffsetX, m_OffsetY;
+	};
+	
 	class DUSK_API MouseButtonEvent : public Event
 	{
 	public:
