@@ -5,6 +5,8 @@
 #include"Dusk/Events/KeyEvent.h"
 #include"Dusk/Events/MouseEvent.h"
 
+#include"glad/glad.h"
+
 namespace Dusk
 {
 	static bool s_GLFWInitilized = false;
@@ -51,6 +53,9 @@ namespace Dusk
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_WindowsWindowProperties);
 		SetVsync(true);
+
+		int gladStatus = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
 
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 		{
@@ -102,6 +107,14 @@ namespace Dusk
 					break;
 				}
 			}
+		});
+
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int KeyCode)
+		{
+			WindowsWindowProperties& windowProperties = *(WindowsWindowProperties*)glfwGetWindowUserPointer(window);
+			
+			KeyTypedEvent event(KeyCode);
+			windowProperties.EventCallback(event);
 		});
 
 		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)

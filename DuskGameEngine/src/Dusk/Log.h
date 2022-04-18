@@ -30,7 +30,7 @@ namespace Dusk
 #define DK_CORE_ERROR(...) ::Dusk::Log::GetCoreLogger()->error(__VA_ARGS__)
 
 //App log macro
-#define DK_CORE_INFO(...) ::Dusk::Log::GetClientLogger()->info(__VA_ARGS__)
-#define DK_CORE_TRACE(...) ::Dusk::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define DK_CORE_WARN(...) ::Dusk::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define DK_CORE_ERROR(...) ::Dusk::Log::GetClientLogger()->error(__VA_ARGS__)
+#define DK_INFO(...) ::Dusk::Log::GetClientLogger()->info(__VA_ARGS__)
+#define DK_TRACE(...) ::Dusk::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define DK_WARN(...) ::Dusk::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define DK_ERROR(...) ::Dusk::Log::GetClientLogger()->error(__VA_ARGS__)

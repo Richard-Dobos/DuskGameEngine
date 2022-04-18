@@ -7,8 +7,14 @@
     <Filter Include="Dusk\Events">
       <UniqueIdentifier>{A0AABE0F-0C60-3705-9554-31DC01092E09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dusk\ImGui">
+      <UniqueIdentifier>{668C8E46-5244-D093-BB4B-A9EFA7226B84}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,6 +43,15 @@
     <ClInclude Include="src\Dusk\Events\MouseEvent.h">
       <Filter>Dusk\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dusk\ImGui\ImGuiLayer.h">
+      <Filter>Dusk\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\Layer.h">
+      <Filter>Dusk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\LayerStack.h">
+      <Filter>Dusk</Filter>
+    </ClInclude>
     <ClInclude Include="src\Dusk\Log.h">
       <Filter>Dusk</Filter>
     </ClInclude>
@@ -47,9 +62,21 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\dkpch.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Dusk\Input\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dusk\Application.cpp">
+      <Filter>Dusk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dusk\ImGui\ImGuiLayer.cpp">
+      <Filter>Dusk\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dusk\Layer.cpp">
+      <Filter>Dusk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dusk\LayerStack.cpp">
       <Filter>Dusk</Filter>
     </ClCompile>
     <ClCompile Include="src\Dusk\Log.cpp">
@@ -59,5 +86,7 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\dkpch.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

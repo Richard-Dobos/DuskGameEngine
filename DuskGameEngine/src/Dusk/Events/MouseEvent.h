@@ -34,6 +34,9 @@ namespace Dusk
 		MouseScrolledEvent(float OffsetX, float OffsetY)
 			:m_OffsetX(OffsetX), m_OffsetY(OffsetY) {}
 
+		inline float GetOffsetX() const { return m_OffsetX; }
+		inline float GetOffsetY() const { return m_OffsetY; }
+
 		std::string ToString() const override
 		{
 			std::stringstream ss;
@@ -57,7 +60,7 @@ namespace Dusk
 		EVENT_CLASS_CATEGORY(EventCategoryMouseButton | EventCategoryInput)
 
 	protected:
-		MouseButtonEvent(int button)
+		MouseButtonEvent(int button )
 			:m_Button(button) {}
 
 		int m_Button;

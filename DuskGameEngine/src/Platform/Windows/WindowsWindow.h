@@ -23,6 +23,7 @@ namespace Dusk
 		void SetVsync(bool enabled) override;
 		bool isVsync() const override;
 
+		inline virtual void* GetNativeWindow() const { return m_Window; };
 	private:
 		virtual void Init(const WindowProperties& WindowProperties);
 		virtual void Shutdown();

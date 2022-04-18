@@ -12,6 +12,12 @@ outputdir = "%{cfg.buildcfg}--%{cfg.system}--%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "DuskGameEngine/vendor/GLFW/include"
+IncludeDir["glad"] = "DuskGameEngine/vendor/glad/include"
+IncludeDir["imgui"] = "DuskGameEngine/vendor/imgui"
+
+include "DuskGameEngine/vendor/GLFW"
+include "DuskGameEngine/vendor/glad"
+include "DuskGameEngine/vendor/imgui"
 
 include "DuskGameEngine/vendor/GLFW/premake5.lua"
 
@@ -36,12 +42,16 @@ project "DuskGameEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}",
+		"%{IncludeDir.imgui}"
 	}
 	
 	links
 	{
 		"GLFW",
+		"glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -53,7 +63,8 @@ project "DuskGameEngine"
 		defines
 		{
 			"DK_PLATFORM_WINDOWS",
-			"DK_BUILD_DLL"
+			"DK_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
@@ -111,12 +122,15 @@ project "SandBox"
 
 	filter "configurations:Debug"
 		defines "DK_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DK_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "DK_DIST"
+		buildoptions "/MD"
 		symbols "On"

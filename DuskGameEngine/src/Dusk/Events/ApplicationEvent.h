@@ -10,6 +10,9 @@ namespace Dusk
 		WindowResizeEvent(unsigned int width, unsigned int height)
 			:m_Width(width), m_Height(height) {}
 
+		inline int GetHeight() const { return m_Height; }
+		inline int GetWidth() const { return m_Width; }
+
 		std::string ToString() const override
 		{
 			std::stringstream ss;

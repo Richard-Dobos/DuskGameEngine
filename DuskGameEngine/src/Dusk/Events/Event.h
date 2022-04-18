@@ -10,7 +10,7 @@ namespace Dusk
 		None = 0,
 		WindowClose, WindowResize, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTypedEvent,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -39,7 +39,6 @@ namespace Dusk
 			return GetCategoryFlags() & category;
 		}
 
-	protected:
 		bool m_Handeled = false;
 	};
 
@@ -48,7 +47,6 @@ namespace Dusk
 		template<typename T>
 		using EventFn = std::function<bool(T&)>;
 		
-
 	public:
 		EventDispatcher(Event& event)
 			:m_Event(event) {}
