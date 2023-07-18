@@ -5,7 +5,7 @@
 
 namespace Dusk
 {
-	class DUSK_API Layer
+	class  Layer
 	{
 	public:
 		Layer(const std::string debugName = "Layer");

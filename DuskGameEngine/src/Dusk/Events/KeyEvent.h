@@ -4,7 +4,7 @@
 
 namespace Dusk
 {
-	class DUSK_API KeyEvent : public Event
+	class  KeyEvent : public Event
 	{
 	public:
 		inline int GetKeyCode() { return m_KeyCode; }
@@ -18,7 +18,7 @@ namespace Dusk
 		int m_KeyCode;
 	};
 
-	class DUSK_API KeyPressedEvent : public KeyEvent
+	class  KeyPressedEvent : public KeyEvent
 	{
 	public:
 		KeyPressedEvent(int keycode, int repeatCount)
@@ -39,7 +39,7 @@ namespace Dusk
 		int m_RepeatCount;
 	};
 
-	class DUSK_API KeyTypedEvent : public KeyEvent
+	class  KeyTypedEvent : public KeyEvent
 	{
 	public:
 		KeyTypedEvent(int KeyCode)
@@ -57,7 +57,7 @@ namespace Dusk
 		EVENT_CLASS_TYPE(KeyTypedEvent);
 	};
 
-	class DUSK_API KeyReleasedEvent : public KeyEvent
+	class  KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int KeyCode)

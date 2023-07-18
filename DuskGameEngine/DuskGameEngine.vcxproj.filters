@@ -10,6 +10,9 @@
     <Filter Include="Dusk\ImGui">
       <UniqueIdentifier>{668C8E46-5244-D093-BB4B-A9EFA7226B84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Dusk\Input">
+      <UniqueIdentifier>{3BC78F46-277F-D193-9086-AAEF7C5D6C84}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
@@ -46,6 +49,15 @@
     <ClInclude Include="src\Dusk\ImGui\ImGuiLayer.h">
       <Filter>Dusk\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dusk\Input\Input.h">
+      <Filter>Dusk\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\Input\KeyCodes.h">
+      <Filter>Dusk\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dusk\Input\MouseButtonCodes.h">
+      <Filter>Dusk\Input</Filter>
+    </ClInclude>
     <ClInclude Include="src\Dusk\Layer.h">
       <Filter>Dusk</Filter>
     </ClInclude>
@@ -58,13 +70,16 @@
     <ClInclude Include="src\Dusk\Window.h">
       <Filter>Dusk</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\dkpch.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Dusk\Input\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Dusk\Application.cpp">
@@ -82,11 +97,15 @@
     <ClCompile Include="src\Dusk\Log.cpp">
       <Filter>Dusk</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\dkpch.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

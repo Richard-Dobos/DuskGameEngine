@@ -4,7 +4,7 @@
 
 namespace Dusk
 {
-	class DUSK_API Input
+	class  Input
 	{
 	public:
 		inline static bool IsKeyPressed(int KeyCode) { return s_Instance->IsKeyPressed(KeyCode); }

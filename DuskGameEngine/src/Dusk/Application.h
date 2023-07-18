@@ -8,7 +8,7 @@
 
 namespace Dusk
 {
-	class DUSK_API Application
+	class  Application
 	{
 	public:
 		Application();

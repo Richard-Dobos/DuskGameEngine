@@ -25,7 +25,7 @@ namespace Dusk
 		EventCategoryMouseButton	= BIT(4)
 	};
 
-	class DUSK_API Event
+	class  Event
 	{
 		friend class EventDispatcher;
 	public:
@@ -42,7 +42,7 @@ namespace Dusk
 		bool m_Handeled = false;
 	};
 
-	class DUSK_API EventDispatcher
+	class  EventDispatcher
 	{
 		template<typename T>
 		using EventFn = std::function<bool(T&)>;

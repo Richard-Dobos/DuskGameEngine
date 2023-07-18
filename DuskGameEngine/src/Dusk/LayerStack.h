@@ -7,7 +7,7 @@
 
 namespace Dusk
 {
-	class DUSK_API LayerStack
+	class  LayerStack
 	{
 	public:
 		LayerStack();

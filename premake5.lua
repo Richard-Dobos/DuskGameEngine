@@ -14,6 +14,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "DuskGameEngine/vendor/GLFW/include"
 IncludeDir["glad"] = "DuskGameEngine/vendor/glad/include"
 IncludeDir["imgui"] = "DuskGameEngine/vendor/imgui"
+IncludeDir["glm"] = "DuskGameEngine/vendor/glm"
 
 include "DuskGameEngine/vendor/GLFW"
 include "DuskGameEngine/vendor/glad"
@@ -23,8 +24,10 @@ include "DuskGameEngine/vendor/GLFW/premake5.lua"
 
 project "DuskGameEngine"
 	location "DuskGameEngine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -44,7 +47,8 @@ project "DuskGameEngine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glad}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}"
 	}
 	
 	links
@@ -56,8 +60,6 @@ project "DuskGameEngine"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -67,27 +69,27 @@ project "DuskGameEngine"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-		}
-
 	filter "configurations:Debug"
 		defines "DK_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DK_RELEASE"
-		symbols "On"
+		runtime "Release"
+		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DK_DIST"
-		symbols "On"
+		runtime "Release"
+		optimize "On"
 
 project "SandBox"
 	location "SandBox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "On"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -101,7 +103,8 @@ project "SandBox"
 	includedirs 
 	{
 		"DuskGameEngine/vendor/spdlog/include",
-		"DuskGameEngine/src"
+		"DuskGameEngine/src",
+		"%{IncludeDir.glm}"
 	}
 	
 	links
@@ -111,8 +114,6 @@ project "SandBox"
 
 	
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -122,15 +123,16 @@ project "SandBox"
 
 	filter "configurations:Debug"
 		defines "DK_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "DK_RELEASE"
-		buildoptions "/MD"
-		symbols "On"
+		runtime "Release"
+		optimize "On"
 
 	filter "configurations:Dist"
 		defines "DK_DIST"
-		buildoptions "/MD"
-		symbols "On"
+		runtime "Release"
+		optimize "On"
+		

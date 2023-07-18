@@ -7,3 +7,6 @@
 [submodule "DuskGameEngine/vendor/imgui"]
 	path = DuskGameEngine/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "DuskGameEngine/vendor/glm"]
+	path = DuskGameEngine/vendor/glm
+	url = https://github.com/g-truc/glm

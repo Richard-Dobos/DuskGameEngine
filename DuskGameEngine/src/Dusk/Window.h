@@ -15,7 +15,7 @@ namespace Dusk
 			:Title(title), Width(width), Height(height){}
 	};
 
-	class DUSK_API Window
+	class  Window
 	{
 	public:
 		using EventCallbackFunc = std::function<void(Event&)>;
